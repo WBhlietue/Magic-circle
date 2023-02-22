@@ -1,0 +1,86 @@
+:root {
+  --color: #ff0000;
+  --size: 10px;
+  --rot: 10deg;
+}
+
+body{
+    margin: 0;
+}
+
+.main{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.fill{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.circle {
+  position: absolute;
+  margin: auto;
+  width: var(--size);
+  height: var(--size);
+  background-color: var(--color);
+  border-radius: var(--size);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.textCirlce {
+  position: fixed;
+  width: var(--size);
+  height: var(--size);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  animation: Rotate  linear infinite;
+}
+@keyframes Rotate {
+  0% {
+    transform: translate(-50%, -50%) rotateZ(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotateZ(360deg);
+  }
+}
+
+.textChild {
+  position: absolute;
+  text-align: center;
+  width: fit-content;
+  height: var(--size);
+  color: red;
+  transform: rotateZ(var(--rot));
+  display: flex;
+  justify-content: center;
+}
+
+.starOut{
+    width: 100vw;
+  height: 100vh;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+}
+
+.stick{
+    margin: auto;
+    position: absolute;
+    background-color: rgb(182, 0, 0);
+    border-radius: 100px;
+}
