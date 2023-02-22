@@ -193,9 +193,9 @@ function AddStar(size) {
     t.appendChild(inC);
     circle.appendChild(t);
   }
-  document.getElementById("main").appendChild(circle);
   document.getElementById("main").appendChild(circle1);
   document.getElementById("main").appendChild(circle2);
+  document.getElementById("main").appendChild(circle);
 }
 
 function GetStar(size) {
