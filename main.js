@@ -63,7 +63,7 @@ document
 document
   .getElementById("main")
   .appendChild(
-    AddCircleTextSet(180, runes2[7] + runes2[8], "reverse", bigWidth, 30, 3)
+    AddCircleTextSet(180, runes2[7], "reverse", bigWidth, 30, 3)
   );
 
 function CreateCircle(size, color, child = null) {
@@ -193,9 +193,13 @@ function AddStar(size) {
     t.appendChild(inC);
     circle.appendChild(t);
   }
-  document.getElementById("main").appendChild(circle1);
-  document.getElementById("main").appendChild(circle2);
-  document.getElementById("main").appendChild(circle);
+  var f = document.createElement("div");
+  f.className="aniFill";
+
+  f.appendChild(circle1);
+  f.appendChild(circle2);
+  f.appendChild(circle);
+  document.getElementById("main").appendChild(f);
 }
 
 function GetStar(size) {

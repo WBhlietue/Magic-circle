@@ -4,26 +4,35 @@
   --rot: 10deg;
 }
 
-body{
-    margin: 0;
+body {
+  margin: 0;
 }
 
-.main{
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    background-color: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.main {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.fill{
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.fill {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.aniFill {
+  animation: Rotate1 5s linear infinite;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .circle {
   position: absolute;
@@ -46,7 +55,7 @@ body{
   transform: translate(-50%, -50%);
   display: flex;
   justify-content: center;
-  animation: Rotate  linear infinite;
+  animation: Rotate linear infinite;
 }
 @keyframes Rotate {
   0% {
@@ -54,6 +63,14 @@ body{
   }
   100% {
     transform: translate(-50%, -50%) rotateZ(360deg);
+  }
+}
+@keyframes Rotate1 {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
   }
 }
 
@@ -68,19 +85,19 @@ body{
   justify-content: center;
 }
 
-.starOut{
-    width: 100vw;
+.starOut {
+  width: 100vw;
   height: 100vh;
-    position: fixed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    justify-items: center;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
 }
 
-.stick{
-    margin: auto;
-    position: absolute;
-    background-color: rgb(182, 0, 0);
-    border-radius: 100px;
+.stick {
+  margin: auto;
+  position: absolute;
+  background-color: rgb(182, 0, 0);
+  border-radius: 100px;
 }
