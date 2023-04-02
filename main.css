@@ -1,18 +1,30 @@
 :root {
-  --color: #ff0000;
+  --color: #ffffff;
   --size: 10px;
   --rot: 10deg;
+  --glow:3
 }
 
 body {
   margin: 0;
+  /* filter: ; */
+}
+
+html {
+  filter: saturate(100%) sepia(100%)
+    blur(linear-gradient(to bottom, #00ffff, #ff00ff));
+  background: linear-gradient(to bottom, #00ffff, #ff00ff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
 .main {
+  z-index: 1;
   position: fixed;
   width: 100vw;
   height: 100vh;
-  background-color: black;
+  background-color: var(--color);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -40,10 +52,14 @@ body {
   width: var(--size);
   height: var(--size);
   background-color: var(--color);
+
   border-radius: var(--size);
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 0 calc(50px * var(--glow)) 0.1px #ffffff10,
+    /* inner white */ 0 0 calc(70px * var(--glow)) 0.1px #ffffff10,
+    /* middle magenta */ 0 0 calc(90px * var(--glow)) 0.1px #ffffff10;
 }
 
 .textCirlce {
@@ -79,7 +95,7 @@ body {
   text-align: center;
   width: fit-content;
   height: var(--size);
-  color: red;
+  color: var(--color);
   transform: rotateZ(var(--rot));
   display: flex;
   justify-content: center;
@@ -98,6 +114,71 @@ body {
 .stick {
   margin: auto;
   position: absolute;
-  background-color: rgb(182, 0, 0);
+  background-color: var(--color);
   border-radius: 100px;
+}
+
+.gradient {
+  z-index: 0;
+  background: linear-gradient(red, yellow);
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.masked-element {
+  mix-blend-mode: multiply;
+  position: fixed;
+  height: 300%;
+  width: 300%;
+  z-index: 10;
+  left: 50%;
+  top: 50%;
+  animation-name: GradRotate;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  /* transform: translate(-50%, -50%) rotateZ(60deg); */
+}
+@keyframes GradRotate {
+  0% {
+    transform: translate(-50%, -50%) rotateZ(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotateZ(360deg);
+  }
+}
+
+#set {
+  position: fixed;
+  width: 80%;
+  height: 80%;
+  background-color: #00ffff;
+  z-index: 100;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: black;
+}
+
+#set .exit {
+  margin: 10px;
+  font-size: 30px;
+  background-color: red;
+  color: white;
+  outline: none;
+  border: none;
+}
+#set .table {
+  margin: 20px auto;
+}
+#set td {
+  padding: 10px;
+  border: 1px black solid;
+}
+
+#edit {
+  z-index: 10;
+  position: fixed;
 }

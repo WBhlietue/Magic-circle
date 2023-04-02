@@ -8,7 +8,48 @@
     <link rel="stylesheet" href="main.css" />
   </head>
   <body>
-    <div class="main" id="main">
+    <div class="gradient"></div>
+    <div class="main" id="main"></div>
+    <div class="masked-element" id="mask"></div>
+    <button id="edit">Edit</button>
+    <div id="set" style="display: none">
+      <button class="exit" id="exitBtn">X</button>
+      <br />
+      <table class="table">
+        <tr>
+          <td>Color 1</td>
+          <td><input type="color" name="" id="color1" /></td>
+        </tr>
+        <tr>
+          <td>Color 2</td>
+          <td><input type="color" name="" id="color2" /></td>
+        </tr>
+        <tr>
+          <td>Glow value</td>
+          <td><input type="number" placeholder="0-4" name="" id="glow" /></td>
+        </tr>
+        <tr>
+          <td>Init Rotate</td>
+          <td><input type="number" name="" id="initRot" /></td>
+        </tr>
+        <tr>
+          <td>Auto Rotate</td>
+          <td><input type="checkbox" name="" id="autoRot" /></td>
+        </tr>
+        <tr>
+          <td>Rotate duration</td>
+          <td><input type="number" name="" id="rotDur" /></td>
+        </tr>
+        <tr>
+          <td>Rotate reverse</td>
+          <td><input type="checkbox" name="" id="rev" /></td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <button id="setBtn">Set</button>
+          </td>
+        </tr>
+      </table>
     </div>
     <script src="main.js"></script>
   </body>
